@@ -21,29 +21,25 @@
     <script>
         function hello()
         {
-            var message = prompt("What do you want to say?");
-            document.getElementById("demo").innerHTML = message;
-            document.getElementById("heading").style = "background-color:red";
-        }
-        function do_something()
-        {
-            var name = document.getElementById("textfield").value
-            if (name == "Phil")
+            var textbox = document.getElementById('textbox');
+            var heading = document.getElementById('heading');
+            if (textbox.value == "Phil")
             {
-                document.getElementById("demo").innerHTML = "Hello, " + name + ". You're really cool.";
+                heading.innerHTML= "Hello, " + textbox.value + ". You're really cool.";
             }
             else{
-                document.getElementById("demo").innerHTML = "Hello, " + name;
+                heading.innerHTML= "Hello, " + textbox.value + ". You're all right.";
             }
             
+            heading.style = "background-color:red";
         }
     </script>
 </head>
 <body>
-    <p>Name:<input id="textfield" type="text"><a href="#" id="doit" onclick="do_something();">Greet</a></p>
     <h1 id="heading" style="background-color:blue">This is a heading</h1>
-    <p id="demo">This is a paragraph. </p>
-    <p>Click <a href="#" onclick="hello();">here</a></p>
+    <p>Name: </p><input id="textbox" type="text"><button onclick="hello();">Greet</button>
+    <p>This is a paragraph. </p>
+    <p>Click <a href="http://google.com">here</a> to visit Google.</p>
     <button type="button" class="btn btn-primary">This is a bootstrap button</button>
     <a href="https://getbootstrap.com/" class="btn btn-primary">This is a link that looks like a button.</a>
 
